@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import '../css/base.css';
 
-export const Apropos = ({theme,bgPage}) => {
+export const Apropos = ({transitionColor,currentColorPage}) => {
   let screen = useRef(null);
   let body = useRef(null);
 
@@ -35,10 +35,10 @@ export const Apropos = ({theme,bgPage}) => {
   return (
     <>
     <div className="load-container">
-        <div className="load-screen" ref={(el) => (screen = el)} style={{backgroundColor:theme}}>
+        <div className="load-screen" ref={(el) => (screen = el)} style={{backgroundColor:transitionColor}}>
         </div>
       </div>
-      <div data-barba="container" className="Home" style={{backgroundColor:bgPage}}>
+      <div data-barba="container" className="Home" style={{backgroundColor:currentColorPage}}>
         <div ref={(el) => (body = el)} className="Headd">
           <div >Welcome to A propos!!!</div>
         </div>

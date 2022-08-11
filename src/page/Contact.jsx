@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 
-export const Contact = ({theme,bgPage}) => {
+export const Contact = ({transitionColor,currentColorPage}) => {
   let screen = useRef(null);
   let body = useRef(null);
 
@@ -34,10 +34,10 @@ export const Contact = ({theme,bgPage}) => {
   return (
     <>
     <div className="load-container">
-        <div className="load-screen" ref={(el) => (screen = el)} style={{backgroundColor:theme}}>
+        <div className="load-screen" ref={(el) => (screen = el)} style={{backgroundColor:transitionColor}}>
         </div>
       </div>
-      <div data-barba="container" className="Contact" style={{backgroundColor:bgPage}}>
+      <div data-barba="container" className="Contact" style={{backgroundColor:currentColorPage}}>
         <div ref={(el) => (body = el)} className="Headd">
           <div >Welcome to Contact!!!</div>
         </div>

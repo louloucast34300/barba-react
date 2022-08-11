@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 
 import {
   Routes as Switch,
@@ -12,31 +12,49 @@ import { Apropos } from '../page/Apropos';
   
 const LocationApp = ({children}) => {
   const location = useLocation().pathname;
-  const [color, setColor] = useState('#4a5bcf')
+  const [currentColorPage, setCurrentColorPage] = useState('')
 
-  let bg = ''
+console.log(currentColorPage);
+
+  let transitionColor = ''
   switch(location){
     case '/contact':
-      bg = '#4a5bcf';
+      transitionColor = '#4a5bcf';
       break;
     case '/':
-      bg = '#0a004b';
+      transitionColor = '#0a004b';
       break;
     case '/a-propos':
-      bg = '#C71585';
+      transitionColor = '#C71585';
       break;
   }
-const changeColor = () =>{
-  setColor(bg)
+
+  useEffect(()=>{
+    const newColor = currentColorPage
+    setCurrentColorPage(transitionColor)
+  },[])
+
+const handleColorCurrentPage = () =>{
+  console.log('color',transitionColor)
+  setCurrentColorPage(transitionColor)
 }
-  console.log(bg)
+
   return (
     <div>
-        <Navbar handleColor={changeColor}/>
+        <Navbar handleColorCurrentPage={handleColorCurrentPage}/>
           <Switch>
-            <Route path="/contact" element={<Contact theme={bg} bgPage={color}/>}></Route>
-            <Route path="/" element={<Accueil theme={bg} bgPage={color}/>}></Route>
-            <Route path="/a-propos" element={<Apropos theme={bg} bgPage={color}/>}></Route>
+            <Route 
+              path="/contact" 
+              element={
+              <Contact 
+              transitionColor={transitionColor} 
+              currentColorPage={currentColorPage}
+              />}>
+            </Route>
+            <Route 
+              path="/" 
+              element={<Accueil transitionColor={transitionColor} currentColorPage={currentColorPage}/>}></Route>
+            <Route path="/a-propos" element={<Apropos transitionColor={transitionColor} currentColorPage={currentColorPage}/>}></Route>
           </Switch>
     </div>
   )
