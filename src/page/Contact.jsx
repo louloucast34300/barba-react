@@ -37,9 +37,9 @@ export const Contact = ({transitionColor,currentColorPage}) => {
         <div className="load-screen" ref={(el) => (screen = el)} style={{backgroundColor:transitionColor}}>
         </div>
       </div>
-      <div data-barba="container" className="Contact" style={{backgroundColor:currentColorPage}}>
+      <div className="Contact" style={{backgroundColor:currentColorPage}}>
         <div ref={(el) => (body = el)} className="Headd">
-          <div >Welcome to Contact!!!</div>
+          <div ><h1>Welcome to Contact!!!</h1></div>
         </div>
       </div>
   </>

@@ -38,9 +38,9 @@ export const Apropos = ({transitionColor,currentColorPage}) => {
         <div className="load-screen" ref={(el) => (screen = el)} style={{backgroundColor:transitionColor}}>
         </div>
       </div>
-      <div data-barba="container" className="Home" style={{backgroundColor:currentColorPage}}>
+      <div className="Apropos" style={{backgroundColor:currentColorPage}}>
         <div ref={(el) => (body = el)} className="Headd">
-          <div >Welcome to A propos!!!</div>
+          <div ><h1>Welcome to A propos!!!</h1></div>
         </div>
       </div>
   </>

@@ -8,7 +8,7 @@ import './css/navbar.css';
 
 const App = () => {
   return (
-    <div className="container-app" data-barba="container">
+    <div className="container-app">
       <Router>
         <LocationApp/>
       </Router>

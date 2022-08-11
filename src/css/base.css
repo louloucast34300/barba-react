@@ -6,8 +6,7 @@ body{
     box-sizing: border-box;
 }
 
-  
-  .Home, .Contact {
+  .Home, .Contact, .Apropos {
     height: 100vh;
     width: 100%;
     position: absolute;
@@ -15,18 +14,16 @@ body{
     transform: translate(-50%,0%);
   }
   
-  .Home > div , .Contact > div {
+  .Home > div , .Contact > div, .Apropos > div {
     padding-top: 300px !important;
+
+  }
+  h1{
     color:white;
     font-family:'Roboto';
-    font-size: 7rem;
+    font-size: 5rem;
+    text-align:center;
   }
-  
-  
-
-  
-  
-  
   .load-container {
     position: fixed;
     top: 0;
