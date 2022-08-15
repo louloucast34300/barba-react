@@ -1,5 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import {motion} from 'framer-motion'
+import Title from "../component/title/Title";
+
+import { Donnuts } from "../component/donnuts/Donnuts";
 
 export const Contact = ({transitionColor,currentColorPage}) => {
   let screen = useRef(null);
@@ -24,7 +28,6 @@ export const Contact = ({transitionColor,currentColorPage}) => {
       },"-=.7")
       tl.to(body,{
         opacity:1,
-        pointerEvents: 'none',
         duration:.1,
         backgroundColor:colorPage,
       },"-=.7");
@@ -39,9 +42,13 @@ export const Contact = ({transitionColor,currentColorPage}) => {
       </div>
       <div className="Contact" style={{backgroundColor:currentColorPage}}>
         <div ref={(el) => (body = el)} className="Headd">
-          <div ><h1>Welcome to Contact!!!</h1></div>
+          <div className="container">
+             <Title title={`Investissez dès maintenant avec le réseau BeAngels`} count={4} speed={10}/>
+             <Donnuts style='red'/>
+          </div>
         </div>
       </div>
+      
   </>
   )
 };

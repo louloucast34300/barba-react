@@ -18,12 +18,20 @@ body{
     padding-top: 300px !important;
 
   }
+  .div-title{
+    overflow: hidden;
+    height: 78px;
+    align-items: center;
+    display: flex;
+  }
+
   h1{
     color:white;
     font-family:'Roboto';
-    font-size: 5rem;
-    text-align:center;
+    font-size: 3rem;
+    text-align:left;
   }
+
   .load-container {
     position: fixed;
     top: 0;
@@ -48,9 +56,14 @@ body{
   }
   
 
-  
+  #quote{
+    color:white;
+    font-family:'Roboto';
+    font-size: 3rem;
+    text-align:left;
+    font-weight:bold;
+  }
   .Headd {
     opacity: 0;
-    pointer-events: none;
     height:100vh;
   }
