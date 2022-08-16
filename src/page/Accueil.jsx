@@ -50,6 +50,7 @@ export const Accueil = ({ transitionColor, currentColorPage }) => {
             speed={10} 
             count={3}/> 
             <Donnuts style='vert'/>
+            <h1>coucou</h1>
           </div>
         </div>
       </div>
