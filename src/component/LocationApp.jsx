@@ -9,7 +9,8 @@ import { Navbar } from "./navbar/Navbar";
 import { Accueil } from "../page/Accueil";
 import { Contact } from "../page/Contact";
 import { Apropos } from '../page/Apropos';
-  
+
+
 const LocationApp = ({children}) => {
   const location = useLocation().pathname;
   const [currentColorPage, setCurrentColorPage] = useState('')

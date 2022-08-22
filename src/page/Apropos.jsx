@@ -4,6 +4,7 @@ import {motion, useMotionValue} from 'framer-motion';
 import '../css/base.css';
 import Title from "../component/title/Title";
 import { Donnuts } from "../component/donnuts/Donnuts";
+import useWindowSize from '../component/smoothScroll/useWindowSize'
 
 export const Apropos = ({transitionColor,currentColorPage}) => {
 
@@ -36,7 +37,21 @@ export const Apropos = ({transitionColor,currentColorPage}) => {
       } 
   });
 
+
+
+
+  const size = useWindowSize();
+  const scrollContainer = useRef()
   
+  useEffect(()=>{
+  document.body.style.height = `${scrollContainer.current.getBoundingClientRect().height}px`
+  },[size.height])
+
+
+
+
+
+
 
   return (
     <>
@@ -44,7 +59,7 @@ export const Apropos = ({transitionColor,currentColorPage}) => {
         <div className="load-screen" ref={(el) => (screen = el)} style={{backgroundColor:transitionColor}}>
         </div>
       </div>
-      <div className="Apropos" style={{backgroundColor:currentColorPage}}>
+      <div ref={scrollContainer} className="Apropos" style={{backgroundColor:currentColorPage}}>
         <div ref={(el) => (body = el)} className="Headd" >
           <div className="container">
             <div className='section-1'>

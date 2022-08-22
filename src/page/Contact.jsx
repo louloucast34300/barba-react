@@ -2,8 +2,8 @@ import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import {motion} from 'framer-motion'
 import Title from "../component/title/Title";
-
 import { Donnuts } from "../component/donnuts/Donnuts";
+import useWindowSize from '../component/smoothScroll/useWindowSize'
 
 export const Contact = ({transitionColor,currentColorPage}) => {
   let screen = useRef(null);
@@ -34,13 +34,40 @@ export const Contact = ({transitionColor,currentColorPage}) => {
     } 
   });
 
+
+
+
+
+
+
+
+  const size = useWindowSize();
+  const scrollContainer = useRef()
+  
+  useEffect(()=>{
+  document.body.style.height = `${scrollContainer.current.getBoundingClientRect().height}px`
+  },[size.height])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <>
     <div className="load-container">
         <div className="load-screen" ref={(el) => (screen = el)} style={{backgroundColor:transitionColor}}>
         </div>
       </div>
-      <div className="Contact" style={{backgroundColor:currentColorPage}}>
+      <div  ref={scrollContainer} className="Contact" style={{backgroundColor:currentColorPage}}>
         <div ref={(el) => (body = el)} className="Headd">
           <div className="container">
              <Title title={`Investissez dès maintenant avec le réseau BeAngels`} count={4} speed={10}/>
