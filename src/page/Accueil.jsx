@@ -25,7 +25,11 @@ export const Accueil = ({ transitionColor, currentColorPage }) => {
   let screen = useRef(null); // .load-screen
   let body = useRef(null); // .Headd
 
-  //Scroll Trigger
+
+/**
+ * ScrollTrigger
+ */
+  //cube Anim
   let textAnim = useRef(null); // .trigger-text
   let cubeAnim = useRef(null); // pas de class
 
